@@ -209,7 +209,7 @@
                     </div>
                 </div>
             </div>
-            <!--/-->
+            <!---->
 
             <!--Post-7-->
             <div class="col-xl-4 col-lg-6 col-md-6 masonry-item">

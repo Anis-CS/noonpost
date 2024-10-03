@@ -14,8 +14,8 @@
                     <div class="col-lg-6 col-md-8 col-sm-11 m-auto">
                         <div class="banner__author ">
                             <div class="banner__author-image">
-                                <a href="author.html" class="image">
-                                    <img src="assets/img/author/1.jpg" alt="" class="banner__author-img">
+                                <a href="{{ route('author') }}" class="image">
+                                    <img src="{{ asset('/') }}website/assets/img/author/1.jpg" alt="" class="banner__author-img">
                                 </a>
                             </div>
                             <div class="banner__author-content">
@@ -56,27 +56,27 @@
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="post-card post-card--default">
                             <div class="post-card__image">
-                                <a href="post-default.html" >
-                                    <img src="assets/img/blog/12.jpg" alt="">
+                                <a href="{{ route('post.default') }}" >
+                                    <img src="{{ asset('/') }}website/assets/img/blog/12.jpg" alt="">
                                 </a>
                             </div>
 
                             <div class="post-card__content">
                                 <a href="blog-grid.html" class="category">lifestyle</a>
                                 <h5 class="post-card__title">
-                                    <a href="post-default.html" class="post-card__title-link">5 Effective Ways I’m Finding Focus in a Busy Season of Life</a>
+                                    <a href="{{ route('post.default') }}" class="post-card__title-link">5 Effective Ways I’m Finding Focus in a Busy Season of Life</a>
                                 </h5>
                                 <p class="post-card__exerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quam atque ipsa laborum sunt distinctio...
                                 </p>
 
                                 <ul class="post-card__meta list-inline">
                                     <li class="post-card__meta-item">
-                                        <a href="author.html" class="post-card__meta-link">
-                                            <img src="assets/img/author/1.jpg" alt="" class="post-card__meta-img">
+                                        <a href="{{ route('author') }}" class="post-card__meta-link">
+                                            <img src="{{ asset('/') }}website/assets/img/author/1.jpg" alt="" class="post-card__meta-img">
                                         </a>
                                     </li>
                                     <li class="post-card__meta-item ">
-                                        <a href="author.html" class="post-card__meta-link">David Smith</a>
+                                        <a href="{{ route('author') }}" class="post-card__meta-link">David Smith</a>
                                     </li>
                                     <li class="post-card__meta-item">
                                         <span class="dot"></span> February 10, 2022
@@ -90,27 +90,27 @@
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="post-card post-card--default">
                             <div class="post-card__image">
-                                <a href="post-default.html" >
-                                    <img src="assets/img/blog/6.jpg" alt="">
+                                <a href="{{ route('post.default') }}" >
+                                    <img src="{{ asset('/') }}website/assets/img/blog/6.jpg" alt="">
                                 </a>
                             </div>
 
                             <div class="post-card__content">
                                 <a href="blog-grid.html" class="category">lifestyle</a>
                                 <h5 class="post-card__title">
-                                    <a href="post-default.html" class="post-card__title-link">Get the Most Out of Iceland with our 10 Travel Tips</a>
+                                    <a href="{{ route('post.default') }}" class="post-card__title-link">Get the Most Out of Iceland with our 10 Travel Tips</a>
                                 </h5>
                                 <p class="post-card__exerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quam atque ipsa laborum sunt distinctio...
                                 </p>
 
                                 <ul class="post-card__meta list-inline">
                                     <li class="post-card__meta-item">
-                                        <a href="author.html" class="post-card__meta-link">
-                                            <img src="assets/img/author/1.jpg" alt="" class="post-card__meta-img">
+                                        <a href="{{ route('author') }}" class="post-card__meta-link">
+                                            <img src="{{ asset('/') }}website/assets/img/author/1.jpg" alt="" class="post-card__meta-img">
                                         </a>
                                     </li>
                                     <li class="post-card__meta-item ">
-                                        <a href="author.html" class="post-card__meta-link">David Smith</a>
+                                        <a href="{{ route('author') }}" class="post-card__meta-link">David Smith</a>
                                     </li>
                                     <li class="post-card__meta-item">
                                         <span class="dot"></span> February 10, 2022
@@ -124,27 +124,27 @@
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="post-card post-card--default">
                             <div class="post-card__image">
-                                <a href="post-default.html" >
-                                    <img src="assets/img/blog/14.jpg" alt="">
+                                <a href="{{ route('post.default') }}" >
+                                    <img src="{{ asset('/') }}website/assets/img/blog/14.jpg" alt="">
                                 </a>
                             </div>
 
                             <div class="post-card__content">
                                 <a href="blog-grid.html" class="category">lifestyle</a>
                                 <h5 class="post-card__title">
-                                    <a href="post-default.html" class="post-card__title-link">7 Holiday Decor Ideas and Exactly What I Love About Each One</a>
+                                    <a href="{{ route('post.default') }}" class="post-card__title-link">7 Holiday Decor Ideas and Exactly What I Love About Each One</a>
                                 </h5>
                                 <p class="post-card__exerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quam atque ipsa laborum sunt distinctio...
                                 </p>
 
                                 <ul class="post-card__meta list-inline">
                                     <li class="post-card__meta-item">
-                                        <a href="author.html" class="post-card__meta-link">
-                                            <img src="assets/img/author/1.jpg" alt="" class="post-card__meta-img">
+                                        <a href="{{ route('author') }}" class="post-card__meta-link">
+                                            <img src="{{ asset('/') }}website/assets/img/author/1.jpg" alt="" class="post-card__meta-img">
                                         </a>
                                     </li>
                                     <li class="post-card__meta-item ">
-                                        <a href="author.html" class="post-card__meta-link">David Smith</a>
+                                        <a href="{{ route('author') }}" class="post-card__meta-link">David Smith</a>
                                     </li>
                                     <li class="post-card__meta-item">
                                         <span class="dot"></span> February 10, 2022
@@ -158,27 +158,27 @@
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="post-card post-card--default">
                             <div class="post-card__image">
-                                <a href="post-default.html" >
-                                    <img src="assets/img/blog/1.jpg" alt="">
+                                <a href="{{ route('post.default') }}" >
+                                    <img src="{{ asset('/') }}website/assets/img/blog/1.jpg" alt="">
                                 </a>
                             </div>
 
                             <div class="post-card__content">
                                 <a href="blog-grid.html" class="category">lifestyle</a>
                                 <h5 class="post-card__title">
-                                    <a href="post-default.html" class="post-card__title-link">7 Holiday Decor Ideas and Exactly What I Love About Each One</a>
+                                    <a href="{{ route('post.default') }}" class="post-card__title-link">7 Holiday Decor Ideas and Exactly What I Love About Each One</a>
                                 </h5>
                                 <p class="post-card__exerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quam atque ipsa laborum sunt distinctio...
                                 </p>
 
                                 <ul class="post-card__meta list-inline">
                                     <li class="post-card__meta-item">
-                                        <a href="author.html" class="post-card__meta-link">
-                                            <img src="assets/img/author/1.jpg" alt="" class="post-card__meta-img">
+                                        <a href="{{ route('author') }}" class="post-card__meta-link">
+                                            <img src="{{ asset('/') }}website/assets/img/author/1.jpg" alt="" class="post-card__meta-img">
                                         </a>
                                     </li>
                                     <li class="post-card__meta-item ">
-                                        <a href="author.html" class="post-card__meta-link">David Smith</a>
+                                        <a href="{{ route('author') }}" class="post-card__meta-link">David Smith</a>
                                     </li>
                                     <li class="post-card__meta-item">
                                         <span class="dot"></span> February 10, 2022
@@ -192,27 +192,27 @@
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="post-card post-card--default">
                             <div class="post-card__image">
-                                <a href="post-default.html" >
-                                    <img src="assets/img/blog/3.jpg" alt="">
+                                <a href="{{ route('post.default') }}" >
+                                    <img src="{{ asset('/') }}website/assets/img/blog/3.jpg" alt="">
                                 </a>
                             </div>
 
                             <div class="post-card__content">
                                 <a href="blog-grid.html" class="category">lifestyle</a>
                                 <h5 class="post-card__title">
-                                    <a href="post-default.html" class="post-card__title-link">Get the Most Out of Iceland with our 10 Travel Tips</a>
+                                    <a href="{{ route('post.default') }}" class="post-card__title-link">Get the Most Out of Iceland with our 10 Travel Tips</a>
                                 </h5>
                                 <p class="post-card__exerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quam atque ipsa laborum sunt distinctio...
                                 </p>
 
                                 <ul class="post-card__meta list-inline">
                                     <li class="post-card__meta-item">
-                                        <a href="author.html" class="post-card__meta-link">
-                                            <img src="assets/img/author/1.jpg" alt="" class="post-card__meta-img">
+                                        <a href="{{ route('author') }}" class="post-card__meta-link">
+                                            <img src="{{ asset('/') }}website/assets/img/author/1.jpg" alt="" class="post-card__meta-img">
                                         </a>
                                     </li>
                                     <li class="post-card__meta-item ">
-                                        <a href="author.html" class="post-card__meta-link">David Smith</a>
+                                        <a href="{{ route('author') }}" class="post-card__meta-link">David Smith</a>
                                     </li>
                                     <li class="post-card__meta-item">
                                         <span class="dot"></span> February 10, 2022
@@ -226,27 +226,27 @@
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="post-card post-card--default">
                             <div class="post-card__image">
-                                <a href="post-default.html" >
-                                    <img src="assets/img/blog/11.jpg" alt="">
+                                <a href="{{ route('post.default') }}" >
+                                    <img src="{{ asset('/') }}website/assets/img/blog/11.jpg" alt="">
                                 </a>
                             </div>
 
                             <div class="post-card__content">
                                 <a href="blog-grid.html" class="category">lifestyle</a>
                                 <h5 class="post-card__title">
-                                    <a href="post-default.html" class="post-card__title-link">Get the Most Out of Iceland with our 10 Travel Tips</a>
+                                    <a href="{{ route('post.default') }}" class="post-card__title-link">Get the Most Out of Iceland with our 10 Travel Tips</a>
                                 </h5>
                                 <p class="post-card__exerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quam atque ipsa laborum sunt distinctio...
                                 </p>
 
                                 <ul class="post-card__meta list-inline">
                                     <li class="post-card__meta-item">
-                                        <a href="author.html" class="post-card__meta-link">
-                                            <img src="assets/img/author/1.jpg" alt="" class="post-card__meta-img">
+                                        <a href="{{ route('author') }}" class="post-card__meta-link">
+                                            <img src="{{ asset('/') }}website/assets/img/author/1.jpg" alt="" class="post-card__meta-img">
                                         </a>
                                     </li>
                                     <li class="post-card__meta-item ">
-                                        <a href="author.html" class="post-card__meta-link">David Smith</a>
+                                        <a href="{{ route('author') }}" class="post-card__meta-link">David Smith</a>
                                     </li>
                                     <li class="post-card__meta-item">
                                         <span class="dot"></span> February 10, 2022
@@ -260,27 +260,27 @@
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="post-card post-card--default">
                             <div class="post-card__image">
-                                <a href="post-default.html" >
-                                    <img src="assets/img/blog/2.jpg" alt="">
+                                <a href="{{ route('post.default') }}" >
+                                    <img src="{{ asset('/') }}website/assets/img/blog/2.jpg" alt="">
                                 </a>
                             </div>
 
                             <div class="post-card__content">
                                 <a href="blog-grid.html" class="category">lifestyle</a>
                                 <h5 class="post-card__title">
-                                    <a href="post-default.html" class="post-card__title-link">5 Effective Ways I’m Finding Focus in a Busy Season of Life</a>
+                                    <a href="{{ route('post.default') }}" class="post-card__title-link">5 Effective Ways I’m Finding Focus in a Busy Season of Life</a>
                                 </h5>
                                 <p class="post-card__exerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quam atque ipsa laborum sunt distinctio...
                                 </p>
 
                                 <ul class="post-card__meta list-inline">
                                     <li class="post-card__meta-item">
-                                        <a href="author.html" class="post-card__meta-link">
-                                            <img src="assets/img/author/1.jpg" alt="" class="post-card__meta-img">
+                                        <a href="{{ route('author') }}" class="post-card__meta-link">
+                                            <img src="{{ asset('/') }}website/assets/img/author/1.jpg" alt="" class="post-card__meta-img">
                                         </a>
                                     </li>
                                     <li class="post-card__meta-item ">
-                                        <a href="author.html" class="post-card__meta-link">David Smith</a>
+                                        <a href="{{ route('author') }}" class="post-card__meta-link">David Smith</a>
                                     </li>
                                     <li class="post-card__meta-item">
                                         <span class="dot"></span> February 10, 2022
@@ -294,27 +294,27 @@
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="post-card post-card--default">
                             <div class="post-card__image">
-                                <a href="post-default.html" >
-                                    <img src="assets/img/blog/4.jpg" alt="">
+                                <a href="{{ route('post.default') }}" >
+                                    <img src="{{ asset('/') }}website/assets/img/blog/4.jpg" alt="">
                                 </a>
                             </div>
 
                             <div class="post-card__content">
                                 <a href="blog-grid.html" class="category">lifestyle</a>
                                 <h5 class="post-card__title">
-                                    <a href="post-default.html" class="post-card__title-link">What Are Your Tips for Hosting an Easy Birthday Party?</a>
+                                    <a href="{{ route('post.default') }}" class="post-card__title-link">What Are Your Tips for Hosting an Easy Birthday Party?</a>
                                 </h5>
                                 <p class="post-card__exerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quam atque ipsa laborum sunt distinctio...
                                 </p>
 
                                 <ul class="post-card__meta list-inline">
                                     <li class="post-card__meta-item">
-                                        <a href="author.html" class="post-card__meta-link">
-                                            <img src="assets/img/author/1.jpg" alt="" class="post-card__meta-img">
+                                        <a href="{{ route('author') }}" class="post-card__meta-link">
+                                            <img src="{{ asset('/') }}website/assets/img/author/1.jpg" alt="" class="post-card__meta-img">
                                         </a>
                                     </li>
                                     <li class="post-card__meta-item ">
-                                        <a href="author.html" class="post-card__meta-link">David Smith</a>
+                                        <a href="{{ route('author') }}" class="post-card__meta-link">David Smith</a>
                                     </li>
                                     <li class="post-card__meta-item">
                                         <span class="dot"></span> February 10, 2022
@@ -328,27 +328,27 @@
                     <div class="col-xl-4 col-lg-6 col-md-6">
                         <div class="post-card post-card--default">
                             <div class="post-card__image">
-                                <a href="post-default.html" >
-                                    <img src="assets/img/blog/15.jpg" alt="">
+                                <a href="{{ route('post.default') }}" >
+                                    <img src="{{ asset('/') }}website/assets/img/blog/15.jpg" alt="">
                                 </a>
                             </div>
 
                             <div class="post-card__content">
                                 <a href="blog-grid.html" class="category">lifestyle</a>
                                 <h5 class="post-card__title">
-                                    <a href="post-default.html" class="post-card__title-link">Get the Most Out of Iceland with our 10 Travel Tips</a>
+                                    <a href="{{ route('post.default') }}" class="post-card__title-link">Get the Most Out of Iceland with our 10 Travel Tips</a>
                                 </h5>
                                 <p class="post-card__exerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quam atque ipsa laborum sunt distinctio...
                                 </p>
 
                                 <ul class="post-card__meta list-inline">
                                     <li class="post-card__meta-item">
-                                        <a href="author.html" class="post-card__meta-link">
-                                            <img src="assets/img/author/1.jpg" alt="" class="post-card__meta-img">
+                                        <a href="{{ route('author') }}" class="post-card__meta-link">
+                                            <img src="{{ asset('/') }}website/assets/img/author/1.jpg" alt="" class="post-card__meta-img">
                                         </a>
                                     </li>
                                     <li class="post-card__meta-item ">
-                                        <a href="author.html" class="post-card__meta-link">David Smith</a>
+                                        <a href="{{ route('author') }}" class="post-card__meta-link">David Smith</a>
                                     </li>
                                     <li class="post-card__meta-item">
                                         <span class="dot"></span> February 10, 2022

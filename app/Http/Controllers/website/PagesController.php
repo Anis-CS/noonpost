@@ -26,5 +26,4 @@ class PagesController extends Controller
         return view('website.pages.page404');
     }
 
-
 }

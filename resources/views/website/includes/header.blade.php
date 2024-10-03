@@ -52,7 +52,7 @@
 
                             <!--contact -->
                             <li class="nav-item">
-                                <a class="nav-link" href="contact.html"> contact </a>
+                                <a class="nav-link" href="{{ route('pages.contact') }}"> contact </a>
                             </li>
                         </ul>
                     </div>
