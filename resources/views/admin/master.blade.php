@@ -1,42 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="en" dir="ltr">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
+
+    <!-- META DATA -->
 @include('admin.includes.meta')
 
-<!-- Favicon -->
+<!-- TITLE -->
+    <title>Noonpost - @yield('title')</title>
+
+    <!-- FAVICON -->
     @include('admin.includes.style')
+
 </head>
 
-<body>
-<div class="container-xxl position-relative bg-white d-flex p-0">
+<body class="ltr app sidebar-mini">
 
-    <!-- Sidebar Start -->
-@include('admin.includes.left-sidebar')
-<!-- Sidebar End -->
+    <!-- Switcher-->
+    @include('admin.includes.right-sidebar')
+    <!-- Switcher-->
 
 
-    <!-- Content Start -->
-    <div class="content">
-        <!-- Navbar Start -->
-    @include('admin.includes.header')
-    <!-- Navbar End -->
+    <!-- PAGE -->
+    <div class="page">
+        <div class="page-main">
 
-    @yield('body')
+            <!-- app-Header -->
+            @include('admin.includes.header')
+            <!-- /app-Header -->
 
-    <!-- Footer Start -->
-    @include('admin.includes.footer')
-    <!-- Footer End -->
+                <!--APP-SIDEBAR-->
+            @include('admin.includes.left-sidebar')
+            <!--/APP-SIDEBAR-->
+
+            <!--app-content open-->
+            @yield('body')
+            <!-- CONTAINER CLOSED -->
+        </div>
+
+
+        <!-- Country-selector modal-->
+        @include('admin.includes.modal')
+
+
+        <!-- FOOTER -->
+        @include('admin.includes.footer')
+        <!-- FOOTER CLOSED -->
+
     </div>
-    <!-- Content End -->
+    <!-- page -->
 
+    <!-- BACK-TO-TOP -->
+    <a href="#top" id="back-to-top"><i class="fa fa-long-arrow-up"></i></a>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-</div>
-
-<!-- JavaScript Libraries -->
+<!-- JQUERY JS -->
 @include('admin.includes.script')
-</body>
 
+</body>
 </html>
+
+
+
