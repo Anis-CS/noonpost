@@ -1,7 +1,7 @@
 @extends('admin.master')
 
 @section('title')
-    Add-Author
+    Add-blog
 @endsection
 
 @section('body')
@@ -22,7 +22,7 @@
                     <div class="ms-auto pageheader-btn">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0);">Forms</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Author Layouts</li>
+                            <li class="breadcrumb-item active" aria-current="page">blog Layouts</li>
                         </ol>
                     </div>
                 </div>
@@ -33,69 +33,73 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header border-bottom">
-                                <span><h3 class="card-title">Add Author Form</h3></span>
-                                <a href="{{ route('author.index') }}" class="btn btn-primary ms-auto d-block">Manage Author</a>
+                                <span><h3 class="card-title">Add blog Form</h3></span>
+                                <a href="{{ route('blogs.index') }}" class="btn btn-primary ms-auto d-block">Manage blog</a>
                             </div>
                             <div class="card-body">
                                 <p class="text-center text-success">{{session('message')}}</p>
-                                <form class="form-horizontal" action="{{ route('author.store') }}" method="POST" enctype="multipart/form-data">
+                                <form class="form-horizontal" action="{{ route('blogs.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row mb-4">
-                                        <label for="categoryname" class="col-md-3 form-label">Author Name</label>
+                                        <label for="categoryname" class="col-md-3 form-label">Category name</label>
                                         <div class="col-md-9">
-                                            <input class="form-control" id="categoryName" name="name" placeholder="Enter author name" type="text">
+                                            <select name="category_id" class="form-control">
+                                                <option>Select A Category</option>
+                                                @foreach($categories as $category)
+                                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="row mb-4">
-                                        <label for="authorEmail" class="col-md-3 form-label">Author Email</label>
+                                        <label for="blogEmail" class="col-md-3 form-label">Blog title</label>
                                         <div class="col-md-9">
-                                            <input class="form-control"  name="email" placeholder="Enter new author email address" type="email">
+                                            <input class="form-control"  name="title" placeholder="Enter new blog title address" type="text">
                                         </div>
                                     </div>
                                     <div class="row mb-4">
-                                        <label for="number" class="col-md-3 form-label">Author Number</label>
+                                        <label for="number" class="col-md-3 form-label">Short Description</label>
                                         <div class="col-md-9">
-                                            <input class="form-control" name="number" placeholder="Enter new author number" type="text">
+                                            <textarea class="form-control" type="text"  name="short_description" cols="30" rows="10" placeholder="Enter new blog description" ></textarea>
                                         </div>
                                     </div>
                                     <div class="row mb-4">
-                                        <label for="description" class="col-md-3 form-label">Description</label>
+                                        <label for="description" class="col-md-3 form-label">Long Description</label>
                                         <div class="col-md-9">
-                                            <textarea class="form-control" type="text"  name="description" cols="30" rows="10" placeholder="Enter new author description" ></textarea>
+                                            <textarea class="form-control" type="text"  name="long_description" cols="30" rows="10" placeholder="Enter new blog description" ></textarea>
                                         </div>
                                     </div>
                                     <div class="row mb-4">
-                                        <label for="image" class="col-md-3 form-label">Author Image</label>
+                                        <label for="image" class="col-md-3 form-label">blog Image</label>
                                         <div class="col-md-9">
                                             <input class="form-control" name="image" type="file">
                                         </div>
                                     </div>
                                     <div class="row mb-4">
-                                        <label for="facebook" class="col-md-3 form-label">Facebook Profile link</label>
+                                        <label for="authorName" class="col-md-3 form-label">Author name</label>
                                         <div class="col-md-9">
-                                            <input class="form-control" type="text" name="facebook_url" placeholder="Enter Author facebook Profile link">
+                                            <select name="author_id" class="form-control">
+                                                <option>Select A Author</option>
+                                                @foreach($authors as $author)
+                                                    <option value="{{ $author->id }}">{{ $author->name }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="row mb-4">
-                                        <label for="instagram" class="col-md-3 form-label">Instagram Profile link</label>
+                                        <label for="facebook" class="col-md-3 form-label">Audio Record link</label>
                                         <div class="col-md-9">
-                                            <input class="form-control" type="text" name="instagram_url" placeholder="Enter Author instagram Profile link">
+                                            <input class="form-control" type="text" name="audio_url" placeholder="Enter blog Audio video link">
                                         </div>
                                     </div>
                                     <div class="row mb-4">
-                                        <label for="x-url" class="col-md-3 form-label">X Profile link</label>
+                                        <label for="instagram" class="col-md-3 form-label">Video Record link</label>
                                         <div class="col-md-9">
-                                            <input class="form-control" type="text" name="x_url" placeholder="Enter Author x_url link">
-                                        </div>
-                                    </div>
-                                    <div class="row mb-4">
-                                        <label for="youtube" class="col-md-3 form-label">Youtube Profile link</label>
-                                        <div class="col-md-9">
-                                            <input class="form-control" type="text" name="youtube_url" placeholder="Enter Author youtube_url link">
+                                            <input class="form-control" type="text" name="video_url" placeholder="Enter blog Video link">
                                         </div>
                                     </div>
 
-                                    <button class="btn btn-primary" type="submit">Create New Category</button>
+                                    <button class="btn btn-primary" type="submit">Create New Blog</button>
                                 </form>
                             </div>
                         </div>

@@ -41,7 +41,7 @@
                     <ul class="slide-menu">
                         <li class="side-menu-label1"><a href="javascript:void(0)">Components</a></li>
                         <li><a href="{{ route('categories.index') }}" class="slide-item">Blog Category</a></li>
-                        <li><a href="{{ route('authors.index') }}" class="slide-item">Author Manage</a></li>
+                        <li><a href="{{ route('author.index') }}" class="slide-item">Author Manage</a></li>
                         <li><a href="form-layouts.html" class="slide-item">Form Layouts</a></li>
                         <li><a href="form-validation.html" class="slide-item">Form Validation</a></li>
                     </ul>

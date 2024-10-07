@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Author;
+use App\Models\Blog;
+use App\Models\BlogCategory;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -12,7 +15,10 @@ class BlogController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.blog.index',
+        [
+            'blogs' =>Blog::all()
+        ]);
     }
 
     /**
@@ -20,7 +26,11 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.blog.add',
+        [
+            'categories'    =>  BlogCategory::all(),
+            'authors'       =>  Author::all(),
+        ]);
     }
 
     /**
@@ -28,7 +38,8 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Blog::saveInfo($request);
+        return redirect(route('blogs.index'))->with('message', 'Blog info create successfully.');
     }
 
     /**
@@ -44,7 +55,12 @@ class BlogController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.blog.edit',
+            [
+                'blog'  =>  Blog::find($id),
+                'categories'    => BlogCategory::all(),
+                'authors'   =>  Author::all()
+            ]);
     }
 
     /**
@@ -52,7 +68,13 @@ class BlogController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        Blog::saveInfo($request,$id);
+        return redirect(route('blogs.index'))->with('message','Blog update successfully.');
+    }
+    public function status(string $id)
+    {
+        Blog::checkStatus($id);
+        return redirect(route('blogs.index'))->with('message','Blog update successfully.');
     }
 
     /**
@@ -60,6 +82,8 @@ class BlogController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Blog::deleteBlog($id);
+        return redirect('blogs.index')->with('message', 'Blog Info Deleted Successfully');
     }
+
 }

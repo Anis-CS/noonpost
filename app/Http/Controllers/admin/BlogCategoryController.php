@@ -34,7 +34,7 @@ class BlogCategoryController extends Controller
     public function store(Request $request)
     {
         BlogCategory::saveInfo($request);
-        return redirect(route('categories'))->with('message', 'Category info create successfully.');
+        return redirect(route('categories.index'))->with('message', 'Category info create successfully.');
     }
 
     /**

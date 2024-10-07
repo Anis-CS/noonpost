@@ -30,10 +30,10 @@ Route::get('/blogs-list',[BlogsController::class,'blogList'])->name('blogs.list'
 Route::get('/blogs-classic',[BlogsController::class,'blogClassic'])->name('blogs.classic');
 
 //.......pages ............//
-Route::get('/author',[PagesController::class,'author'])->name('page-author');
+Route::get('/author-info',[PagesController::class,'author'])->name('page-author');
 Route::get('/about',[PagesController::class,'about'])->name('pages.about');
 Route::get('/contact',[PagesController::class,'contact'])->name('pages.contact');
-Route::get('/costomer-login',[PagesController::class,'login'])->name('pages.login');
+Route::get('/customer-login',[PagesController::class,'login'])->name('pages.login');
 Route::get('/sign-up',[PagesController::class,'signUp'])->name('pages.sign-up');
 Route::get('/pages404',[PagesController::class,'pages404'])->name('pages.pages404');
 
@@ -47,10 +47,12 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
     ]);
     Route::get('/author-add',[AuthorController::class,'create'])->name('author.add');
-    Route::get('/authors',[AuthorController::class,'index'])->name('authors.index');
+    Route::get('/author-manage',[AuthorController::class,'index'])->name('author.index');
     Route::post('/author-save',[AuthorController::class,'store'])->name('author.store');
     Route::get('/author-edit/{id}',[AuthorController::class,'edit'])->name('author.edit');
-    Route::get('/author-update/{id}',[AuthorController::class,'update'])->name('author.update');
-    Route::get('/author-delete/{id}',[AuthorController::class,'destroy'])->name('author.delete');
+    Route::post('/author-update/{id}',[AuthorController::class,'update'])->name('author.update');
+    Route::get('/author-details/{id}',[AuthorController::class,'show'])->name('author.details');
+    Route::get('/author-status/{id}',[AuthorController::class,'status'])->name('author.status');
+    Route::post('/author-delete/{id}',[AuthorController::class,'destroy'])->name('author.delete');
 
 });
