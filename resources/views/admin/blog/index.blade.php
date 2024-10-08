@@ -54,11 +54,8 @@
                                                 <td>{{ $blog->category->name }}</td>
                                                 <td>{{ $blog->title }}</td>
                                                 <td>{{ $blog->author->name }}</td>
-                                                <td>{{ $blog->created_at }}</td>
+                                                <td>{{ date('j F, Y', strtotime($blog->created_at)) }}</td>
                                                 <td class="justify-content-center">
-                                                    <a href="{{ route('blogs.edit', $blog->id) }}" class="btn btn-primary btn-sm me-1 float-start">
-                                                        <i class="fa fa-edit"></i>
-                                                    </a>
                                                     <a href="{{ route('blogs.show', $blog->id) }}" class="btn btn-primary btn-sm me-1 float-start">
                                                         <i class="fa fa-info"></i>
                                                     </a>

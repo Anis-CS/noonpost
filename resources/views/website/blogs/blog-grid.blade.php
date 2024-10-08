@@ -576,7 +576,6 @@
             </div>
         </section><!--/-->
 
-
         <!--newslettre-->
         @include('website.includes.body.newslettre')
     </main>

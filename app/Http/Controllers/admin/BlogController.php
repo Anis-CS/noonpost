@@ -47,7 +47,11 @@ class BlogController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('admin.blog.details',
+        [
+            'blog' =>   Blog::find($id),
+
+        ]);
     }
 
     /**
@@ -74,7 +78,7 @@ class BlogController extends Controller
     public function status(string $id)
     {
         Blog::checkStatus($id);
-        return redirect(route('blogs.index'))->with('message','Blog update successfully.');
+        return back()->with('message','Status Change Successfully.');
     }
 
     /**

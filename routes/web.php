@@ -9,6 +9,7 @@ use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\BlogCategoryController;
 use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\AuthorController;
+use App\Http\Controllers\admin\CarouselController;
 
 
 //Route::get('/', function () { return view('welcome'); });
@@ -41,11 +42,15 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
 //    Route::get('/dashboard', function () {return view('dashboard'); })->name('dashboard');
     Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
+
     Route::resources([
         'categories'    =>  BlogCategoryController::class,
         'blogs'         =>  BlogController::class,
 
     ]);
+    Route::get('/blog-status/{id}',[BlogController::class,'status'])->name('blogs.status');
+
+    //------Author Controller --------//
     Route::get('/author-add',[AuthorController::class,'create'])->name('author.add');
     Route::get('/author-manage',[AuthorController::class,'index'])->name('author.index');
     Route::post('/author-save',[AuthorController::class,'store'])->name('author.store');
@@ -54,5 +59,10 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/author-details/{id}',[AuthorController::class,'show'])->name('author.details');
     Route::get('/author-status/{id}',[AuthorController::class,'status'])->name('author.status');
     Route::post('/author-delete/{id}',[AuthorController::class,'destroy'])->name('author.delete');
+
+    //-------- Carousel Controller------//
+    Route::get('/carousel',[CarouselController::class, 'index'])->name('carousel');
+    Route::get('/carousel-add',[CarouselController::class, 'create'])->name('carousel.create');
+    Route::post('/carousel-save',[CarouselController::class, 'store'])->name('carousel.store');
 
 });

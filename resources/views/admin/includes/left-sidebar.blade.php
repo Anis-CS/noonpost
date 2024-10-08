@@ -57,6 +57,7 @@
                     </a>
                     <ul class="slide-menu">
                         <li><a href="{{ route('blogs.index') }}" class="slide-item">Blog Manage</a></li>
+                        <li><a href="{{ route('carousel') }}" class="slide-item">Carousel Manage</a></li>
                     </ul>
                 </li>
                 <li class="slide">
@@ -69,9 +70,11 @@
                         <span class="side-menu__label">Company Module</span><i class="angle fa fa-angle-right"></i>
                     </a>
                     <ul class="slide-menu">
-                        <li><a href="" class="slide-item">Manage Company</a></li>
+                        <li><a href="{{ route('blogs.index') }}" class="slide-item">Manage Company</a></li>
+                        <li><a href="{{ route('blogs.index') }}" class="slide-item">Company Policy</a></li>
                     </ul>
                 </li>
+
             </ul>
             <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"
                     width="24" height="24" viewBox="0 0 24 24">
