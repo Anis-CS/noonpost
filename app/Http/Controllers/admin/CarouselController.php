@@ -27,7 +27,26 @@ class CarouselController extends Controller
     {
 
         Carousel::saveInfo($request->blogs);
+        return redirect(route('carousel'));
+    }
+    public function edit($id)
+    {
+        return view('admin.carousel.edit',
+        [
+            'carousel'=>Carousel::find($id),
+            'blogs' =>Blog::where('status',1)->get()
+        ]);
+    }
+    public function update(Request $request,$id)
+    {
+        Carousel::UpdateCarousel($request , $id);
 
+        return redirect(route('carousel'));
+    }
+
+    public function status($id)
+    {
+        Carousel::checkStatus($id);
         return redirect(route('carousel'));
     }
 }

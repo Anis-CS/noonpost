@@ -9,7 +9,7 @@
                                 <div class="slider__item-content">
                                     <a href="blog-grid.html" class="category">{{ $carousel->blog->category->name }}</a>
                                     <h1 class="slider__title">
-                                        <a href="post-default.html" class="slider__title-link">{{ asset($carousel->blog->title) }}</a>
+                                        <a href="post-default.html" class="slider__title-link">{{ $carousel->blog->title }}</a>
                                     </h1>
                                     <ul class="slider__meta list-inline">
                                         <li class="slider__meta-item">
@@ -19,8 +19,8 @@
                                         </li>
                                         <li class="slider__meta-item "><a href="author.html" class="slider__meta-link">{{ $carousel->blog->author->name }}</a>
                                         </li>
-                                        <li class="slider__meta-item">  <span class="dot"></span> February 10, 2024</li>
-                                        <li class="slider__meta-item"> <span class="dot"></span> 15 min Read</li>
+                                        <li class="slider__meta-item">  <span class="dot"></span> {{ $carousel->updated_at->format('F j, Y') }}</li>
+                                        <li class="slider__meta-item"> <span class="dot"></span> {{ $carousel->updated_at->format('i') }} min Read</li>
                                         <li class="slider__meta-item"> <span class="dot"></span> 2 comments</li>
                                     </ul>
                                 </div>

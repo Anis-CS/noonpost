@@ -14,9 +14,13 @@
                     <div class="col-lg-6 m-auto">
                         <div class="widget">
                             <h5 class="widget__title">Sign up</h5>
-                            <form  class="widget__form contact_form " method="post">
+                            <form action="{{ route('customer.create') }}"  class="widget__form contact_form " method="post">
+                                @csrf
                                 <div class="form-group">
-                                    <input type="text" class="form-control widget__form-input" placeholder="Username*" name="username" value="">
+                                    <input type="text" class="form-control widget__form-input" placeholder="Username*" name="name" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control widget__form-input" placeholder="Mobile Number*" name="phone" value="">
                                 </div>
                                 <div class="form-group">
                                     <input type="email" class="form-control widget__form-input" placeholder="Email Address*" name="email" value="">
@@ -34,7 +38,7 @@
                                     <button type="submit" class="btn-custom">Sign Up Now</button>
                                 </div>
                                 <p class="widget__form-text">Already have an account?
-                                    <a href="login.html" class="widget__form-link">Login</a>
+                                    <a href="{{ route('pages.login') }}" class="widget__form-link">Login</a>
                                 </p>
                             </form>
                         </div>

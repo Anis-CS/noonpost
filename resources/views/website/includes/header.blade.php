@@ -22,28 +22,35 @@
                             </li>
 
                             <!--Posts features -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle " href="javascript:void(0)" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">Post features</a>
-                                <ul class="dropdown-menu ">
-                                    <li><a class="dropdown-item " href="{{route('post.default')}}">post default </a></li>
-                                    <li><a class="dropdown-item" href="{{route('post.left-sidebar')}}">post left sidebar </a></li>
-                                    <li><a class="dropdown-item" href="{{route('post.no-sidebar')}}">post no sidebar</a></li>
-                                    <li><a class="dropdown-item" href="{{route('post.video')}}">post video </a></li>
-                                    <li><a class="dropdown-item" href="{{route('post.audio')}}">post audio </a></li>
-                                    <li><a class="dropdown-item" href="{{route('post.gallery')}}">post gallery </a></li>
-                                </ul>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('post.default')}}">Post feature </a>
                             </li>
+{{--                             <li class="nav-item dropdown">--}}
+{{--                                <a class="nav-link dropdown-toggle " href="javascript:void(0)" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">Post features</a>--}}
+{{--                                <ul class="dropdown-menu ">--}}
+{{--                                    <li><a class="dropdown-item " href="{{route('post.default')}}">post default </a></li>--}}
+{{--                                    <li><a class="dropdown-item" href="{{route('post.left-sidebar')}}">post left sidebar </a></li>--}}
+{{--                                    <li><a class="dropdown-item" href="{{route('post.no-sidebar')}}">post no sidebar</a></li>--}}
+{{--                                    <li><a class="dropdown-item" href="{{route('post.video')}}">post video </a></li>--}}
+{{--                                    <li><a class="dropdown-item" href="{{route('post.audio')}}">post audio </a></li>--}}
+{{--                                    <li><a class="dropdown-item" href="{{route('post.gallery')}}">post gallery </a></li>--}}
+{{--                                </ul>--}}
+{{--                            </li>--}}
 
                             <!--Blogs-->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link  dropdown-toggle" href="javascript:void(0)" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false"> blogs </a>
-                                <ul class="dropdown-menu ">
-                                    <li><a class="dropdown-item " href="{{ route('blogs.grid') }}">Blog grid</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('blogs.masonry') }}">Blog masonry</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('blogs.list') }}">Blog list</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('blogs.classic') }}">Blog classic</a></li>
-                                </ul>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('blogs.masonry') }}">blogs</a>
                             </li>
+
+{{--                            <li class="nav-item dropdown">--}}
+{{--                                <a class="nav-link  dropdown-toggle" href="javascript:void(0)" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false"> blogs </a>--}}
+{{--                                <ul class="dropdown-menu ">--}}
+{{--                                    <li><a class="dropdown-item " href="{{ route('blogs.grid') }}">Blog grid</a></li>--}}
+{{--                                    <li><a class="dropdown-item" href="{{ route('blogs.masonry') }}">Blog masonry</a></li>--}}
+{{--                                    <li><a class="dropdown-item" href="{{ route('blogs.list') }}">Blog list</a></li>--}}
+{{--                                    <li><a class="dropdown-item" href="{{ route('blogs.classic') }}">Blog classic</a></li>--}}
+{{--                                </ul>--}}
+{{--                            </li>--}}
 
                             <!--Pages-->
                             <li class="nav-item">
@@ -54,6 +61,21 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('pages.contact') }}"> contact </a>
                             </li>
+
+                            @if(Session::get('customer_id'))
+                                <li class="nav-item dropdown">
+                                    <a href="" data-bs-toggle="dropdown"><i class="fa fa-user"></i> {{ Session::get('customer_name') }}</a>
+                                    <ul class="dropdown-menu dropdown-menu-dark">
+                                        <li><a href="{{ route('customer.dashboard') }}" class="dropdown-item">Dashboard</a></li>
+                                        <li><a href="{{ route('customer.logout') }}" class="dropdown-item">logout</a></li>
+                                    </ul>
+                                </li>
+                            @else
+                                <li class="nav-item" onclick="openAccount()">
+                                    <a class="nav-link" href="{{ route('pages.login') }}"> login </a>
+                                </li>
+                            @endif
+
                         </ul>
                     </div>
                     <!--/-->

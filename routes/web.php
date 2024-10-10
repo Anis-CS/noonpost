@@ -10,33 +10,43 @@ use App\Http\Controllers\admin\BlogCategoryController;
 use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\AuthorController;
 use App\Http\Controllers\admin\CarouselController;
+use App\Http\Controllers\website\CustomerController;
 
 
 //Route::get('/', function () { return view('welcome'); });
 
 Route::get('/',[WebsiteController::class,'index'])->name('home');
 
-//....... post-features...........//
+//....... post-features route...........//
 Route::get('/post-default',[PostFeatureController::class,'postDefault'])->name('post.default');
-Route::get('/post-left-sidebar',[PostFeatureController::class,'leftSidebar'])->name('post.left-sidebar');
-Route::get('/post-no-sidebar',[PostFeatureController::class,'noSidebar'])->name('post.no-sidebar');
-Route::get('/post-video',[PostFeatureController::class,'postVideo'])->name('post.video');
-Route::get('/post-audio',[PostFeatureController::class,'postAudio'])->name('post.audio');
-Route::get('/post-gallery',[PostFeatureController::class,'postGallery'])->name('post.gallery');
 
-//........blogs ............//
-Route::get('/blogs-grid',[BlogsController::class,'blogGrid'])->name('blogs.grid');
+//Route::get('/post-left-sidebar',[PostFeatureController::class,'leftSidebar'])->name('post.left-sidebar');
+//Route::get('/post-no-sidebar',[PostFeatureController::class,'noSidebar'])->name('post.no-sidebar');
+//Route::get('/post-video',[PostFeatureController::class,'postVideo'])->name('post.video');
+//Route::get('/post-audio',[PostFeatureController::class,'postAudio'])->name('post.audio');
+//Route::get('/post-gallery',[PostFeatureController::class,'postGallery'])->name('post.gallery');
+
+//........blogs route............//
 Route::get('/blogs-masonry',[BlogsController::class,'blogMasonry'])->name('blogs.masonry');
-Route::get('/blogs-list',[BlogsController::class,'blogList'])->name('blogs.list');
-Route::get('/blogs-classic',[BlogsController::class,'blogClassic'])->name('blogs.classic');
 
-//.......pages ............//
-Route::get('/author-info',[PagesController::class,'author'])->name('page-author');
+//Route::get('/blogs-grid',[BlogsController::class,'blogGrid'])->name('blogs.grid');
+//Route::get('/blogs-list',[BlogsController::class,'blogList'])->name('blogs.list');
+//Route::get('/blogs-classic',[BlogsController::class,'blogClassic'])->name('blogs.classic');
+
+//.......pages route............//
 Route::get('/about',[PagesController::class,'about'])->name('pages.about');
+Route::get('/author-info',[PagesController::class,'author'])->name('author');
+Route::get('/author-info/{id}',[PagesController::class,'authorInfo'])->name('author.info');
 Route::get('/contact',[PagesController::class,'contact'])->name('pages.contact');
 Route::get('/customer-login',[PagesController::class,'login'])->name('pages.login');
 Route::get('/sign-up',[PagesController::class,'signUp'])->name('pages.sign-up');
 Route::get('/pages404',[PagesController::class,'pages404'])->name('pages.pages404');
+
+// ...............Customer Route.............//
+Route::post('/customer-save',[CustomerController::class, 'store'])->name('customer.create');
+Route::get('/customer/dashboard',[CustomerController::class,'customerDashboard'])->name('customer.dashboard');
+Route::get('/customer/login',[CustomerController::class,'loginForm'])->name('customer.login');
+Route::get('/customer/logout',[CustomerController::class,'logout'])->name('customer.logout');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
 
@@ -62,7 +72,11 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
     //-------- Carousel Controller------//
     Route::get('/carousel',[CarouselController::class, 'index'])->name('carousel');
-    Route::get('/carousel-add',[CarouselController::class, 'create'])->name('carousel.create');
-    Route::post('/carousel-save',[CarouselController::class, 'store'])->name('carousel.store');
+
+//    Route::get('/carousel-add',[CarouselController::class, 'create'])->name('carousel.create');
+//    Route::post('/carousel-save',[CarouselController::class, 'store'])->name('carousel.store');
+    Route::get('/carousel-edit/{id}',[CarouselController::class, 'edit'])->name('carousel.edit');
+    Route::post('/carousel-update/{id}',[CarouselController::class, 'update'])->name('carousel.update');
+    Route::get('/carousel-status/{id}',[CarouselController::class, 'status'])->name('carousel.show');
 
 });

@@ -16,20 +16,19 @@
                         <h5 class="post-card__title">
                             <a href="post-default.html" class="post-card__title-link">{{ $blog->title }}</a>
                         </h5>
-                        <p class="post-card__exerpt">{!! $blog->long_description !!}
-                        </p>
+                        <p class="post-card__exerpt">{!! $blog->long_description !!}</p>
 
                         <ul class="post-card__meta list-inline">
                             <li class="post-card__meta-item">
-                                <a href="author.html" class="post-card__meta-link">
+                                <a href="{{ route('author.info', $blog->author->id ) }}" class="post-card__meta-link">
                                     <img src="{{ asset($blog->author->image) }}" alt="author-img" class="post-card__meta-img">
                                 </a>
                             </li>
                             <li class="post-card__meta-item ">
-                                <a href="author.html" class="post-card__meta-link">{{ $blog->author->name }}</a>
+                                <a href="{{ route('author.info', $blog->author->id ) }}" class="post-card__meta-link">{{ $blog->author->name }}</a>
                             </li>
                             <li class="post-card__meta-item">
-                                <span class="dot"></span> {{($blog->created_at)->isoFormat('MMM Do YYYY')}}
+                                <span class="dot"></span> {{ $blog->created_at->format('F j, Y') }}
                             </li>
                         </ul>
                     </div>

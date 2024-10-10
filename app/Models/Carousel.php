@@ -21,6 +21,24 @@ class Carousel extends Model
             self::$carousel->save();
         }
     }
+
+    public static function UpdateCarousel($request,$id)
+    {
+        self::$carousel             = Carousel::find($id);
+        self::$carousel->blog_id    = $request->blog_id;
+        self::$carousel->save();
+    }
+    public static function checkStatus($id)
+    {
+        self::$carousel    = Carousel::find($id);
+        if (self::$carousel->status == 1){
+            self::$carousel->status = 0;
+        }else{
+            self::$carousel->status = 1;
+        }
+        self::$carousel->save();
+    }
+
     public function blog()
     {
         return $this->belongsTo(Blog::class);

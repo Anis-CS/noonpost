@@ -3,12 +3,20 @@
 namespace App\Http\Controllers\website;
 
 use App\Http\Controllers\Controller;
+use App\Models\Author;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
     public function author(){
         return view('website.pages.author');
+    }
+
+    public function authorInfo(string $id){
+        return view('website.pages.author',
+            [
+                'author'    =>  Author::find($id),
+            ]);
     }
     public function about(){
         return view('website.pages.about');

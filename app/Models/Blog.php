@@ -67,10 +67,12 @@ class Blog extends Model
         self::$blog->delete();
     }
 
-    public function category(){
+    public function category()
+    {
         return $this->belongsTo(BlogCategory::class);
     }
-    public function author(){
+    public function author()
+    {
         return $this->belongsTo(Author::class);
     }
 }

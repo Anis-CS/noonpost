@@ -32,7 +32,7 @@
                             <div class="card-header border-bottom">
                                 <span><h3 class="card-title">All Carousel Blog</h3></span>
                                 <p class="text-center text-success ms-auto">{{session('message')}}</p>
-                                <a href="{{ route('carousel.create') }}" class="btn btn-primary ms-auto d-block">Add Carousel</a>
+{{--                                <a href="{{ route('carousel.create') }}" class="btn btn-primary ms-auto d-block">Add Carousel</a>--}}
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -52,19 +52,19 @@
                                                 <td>{{ $carousel->blog->category->name }}</td>
                                                 <td>{{ $carousel->status==1 ? 'Publish' : 'Unpublish' }}</td>
                                                 <td class="justify-content-center">
-{{--                                                    <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary btn-sm me-2 float-start">--}}
-{{--                                                        <i class="fa fa-edit"></i>--}}
-{{--                                                    </a>--}}
+                                                    <a href="{{ route('carousel.edit', $carousel->id) }}" class="btn btn-primary btn-sm me-2 float-start">
+                                                        <i class="fa fa-edit"></i>
+                                                    </a>
 
-{{--                                                    @if($category->status == 1)--}}
-{{--                                                        <a href="{{ route('categories.show', $category->id) }}" class="btn btn-warning btn-sm me-2 float-start">--}}
-{{--                                                            <i class="fa fa-eye-slash"></i>--}}
-{{--                                                        </a>--}}
-{{--                                                    @else--}}
-{{--                                                        <a href="{{ route('categories.show', $category->id) }}" class="btn btn-success btn-sm me-2 float-start">--}}
-{{--                                                            <i class="fa fa-eye"></i>--}}
-{{--                                                        </a>--}}
-{{--                                                    @endif--}}
+                                                    @if($carousel->status == 1)
+                                                        <a href="{{ route('carousel.show', $carousel->id) }}" class="btn btn-warning btn-sm me-2 float-start">
+                                                            <i class="fa fa-eye-slash"></i>
+                                                        </a>
+                                                    @else
+                                                        <a href="{{ route('carousel.show', $carousel->id) }}" class="btn btn-success btn-sm me-2 float-start">
+                                                            <i class="fa fa-eye"></i>
+                                                        </a>
+                                                    @endif
 
 {{--                                                    <form action="{{ route('categories.destroy', $category->id) }} " method="post">--}}
 {{--                                                        @csrf--}}
