@@ -19,26 +19,27 @@
                                         class="contact__google-map-iframe">
                                 </iframe>
                             </div>
-                            <form action="https://assiagroupe.vercel.app/noonpost/html/assets/php/mail.php" class="widget__form contact__form " method="POST" id="main_contact_form">
+                            <form action="{{ route('contact.send') }}" method="POST">
+                                @csrf
                                 <h5 class="widget__form-title">Feel free to contact any time.</h5>
                                 <p class="widget__form-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, repudiandae.</p>
                                 <div class="alert alert-success contact__msg" style="display: none" role="alert">
                                     Your message was sent successfully.
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" name="name" id="name" class="form-control widget__form-input" placeholder="Your Name*" required="required">
+                                <div class="form-group mb-4">
+                                    <input type="text" name="name" class="form-control widget__form-input" placeholder="Your Name*" required="required">
                                 </div>
 
-                                <div class="form-group">
-                                    <input type="email" name="email" id="email" class="form-control widget__form-input" placeholder="Your Email*" required="required">
+                                <div class="form-group mb-4">
+                                    <input type="email" name="email" class="form-control widget__form-input" placeholder="Your Email*" required="required">
                                 </div>
 
-                                <div class="form-group">
-                                    <input type="text" name="subject" id="subject" class="form-control widget__form-input" placeholder="Your Subject*" required="required">
+                                <div class="form-group mb-4">
+                                    <input type="text" name="subject" class="form-control widget__form-input" placeholder="Your Subject*" required="required">
                                 </div>
 
-                                <div class="form-group">
-                                    <textarea name="message" id="message" cols="30" rows="5" class="form-control widget__form-input" placeholder="Your Message*" required="required"></textarea>
+                                <div class="form-group mb-4">
+                                    <textarea name="message" cols="30" rows="5" class="form-control widget__form-input" placeholder="Your Message*" required="required"></textarea>
                                 </div>
 
                                 <button type="submit" name="submit" class="btn-custom">Send Message</button>

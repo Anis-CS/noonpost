@@ -20,7 +20,13 @@ class CustomerController extends Controller
         Session::put('customer_id',$this->customer->id);
         Session::put('customer_name',$this->customer->name);
 
-        return back();
+        return redirect('/');
+    }
+
+    public function customerLoginCheck(Request $request){
+        return $request;
+        Customer::loginCheck($request);
+        return redirect('/customer/dashboard');
     }
 
 

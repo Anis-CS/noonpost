@@ -11,7 +11,7 @@ use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\AuthorController;
 use App\Http\Controllers\admin\CarouselController;
 use App\Http\Controllers\website\CustomerController;
-
+use App\Http\Controllers\website\ContactController;
 
 //Route::get('/', function () { return view('welcome'); });
 
@@ -38,6 +38,8 @@ Route::get('/about',[PagesController::class,'about'])->name('pages.about');
 Route::get('/author-info',[PagesController::class,'author'])->name('author');
 Route::get('/author-info/{id}',[PagesController::class,'authorInfo'])->name('author.info');
 Route::get('/contact',[PagesController::class,'contact'])->name('pages.contact');
+Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
+
 Route::get('/customer-login',[PagesController::class,'login'])->name('pages.login');
 Route::get('/sign-up',[PagesController::class,'signUp'])->name('pages.sign-up');
 Route::get('/pages404',[PagesController::class,'pages404'])->name('pages.pages404');
@@ -45,8 +47,9 @@ Route::get('/pages404',[PagesController::class,'pages404'])->name('pages.pages40
 // ...............Customer Route.............//
 Route::post('/customer-save',[CustomerController::class, 'store'])->name('customer.create');
 Route::get('/customer/dashboard',[CustomerController::class,'customerDashboard'])->name('customer.dashboard');
-Route::get('/customer/login',[CustomerController::class,'loginForm'])->name('customer.login');
+Route::post('/customer/login',[CustomerController::class,'customerLoginCheck'])->name('customer.login');
 Route::get('/customer/logout',[CustomerController::class,'logout'])->name('customer.logout');
+
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
 
