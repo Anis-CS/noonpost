@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Session;
 
 class Customer extends Model
 {
@@ -82,26 +83,5 @@ class Customer extends Model
         self::$customer->image          = self::$imageUrl;
         self::$customer->save();
     }
-    public static function loginCheck($request)
-    {
-        self::$customer = Customer::where('email',$request->user_name)
-            ->orWhere('phone',$request->user_name)
-            ->first();
-        if (self::$customer){
-            if (password_verify($request->password,self::$customer->password)){
-
-                Session::put('customer_id', self::$customer->id);
-                Session::put('customer_name', self::$customer->name);
-                return back()->with('message','logIn successfully');
-
-            }else{
-                return back()->with('message','Please use valid password');
-            }
-        }else{
-            return back()->with('message','Please use valid email or phone number');
-        }
-
-    }
-
 
 }

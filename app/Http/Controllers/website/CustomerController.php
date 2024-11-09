@@ -24,9 +24,23 @@ class CustomerController extends Controller
     }
 
     public function customerLoginCheck(Request $request){
-        return $request;
-        Customer::loginCheck($request);
-        return redirect('/customer/dashboard');
+        $this->customer = Customer::where('email',$request->username)
+            ->orWhere('phone',$request->username)
+            ->first();
+        if ($this->customer){
+            if (password_verify($request->password,$this->customer->password)){
+
+                Session::put('customer_id', $this->customer->id);
+                Session::put('customer_name', $this->customer->name);
+                return redirect('/')->with('message','logIn successfully');
+
+            }else{
+                return back()->with('message','Please use valid password');
+            }
+        }else{
+            return back()->with('message','Please use valid email or phone number');
+        }
+
     }
 
 

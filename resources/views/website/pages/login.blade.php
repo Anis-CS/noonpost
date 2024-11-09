@@ -14,8 +14,9 @@
                     <div class="col-lg-6 m-auto">
                         <div class="widget">
                             <h5 class="widget__title">Login</h5>
+                            <p class="ms-0">{{ session('message') }}</p>
                             <form  action="{{ route('customer.login') }}" class="widget__form" method="post">
-
+                                @csrf
                                 <div class="form-group">
                                     <input type="text" class="form-control widget__form-input" placeholder="Username*" name="username" value="">
                                 </div>
