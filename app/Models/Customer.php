@@ -21,11 +21,11 @@ class Customer extends Model
             {
                 unlink(self::$customer->image);
             }
-            $customerImgUrl    = getImageUrl($request->image, 'admin/upload/customer-images/');
+            self::$customerImgUrl    = getImageUrl($request->image, 'admin/upload/customer-images/');
         }
         else
         {
-            $customerImgUrl    = " ";
+            self::$customerImgUrl    = " ";
         }
 
         self::$customer         = new Customer();

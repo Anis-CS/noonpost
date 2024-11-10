@@ -73,6 +73,7 @@
                             @else
                                 <li class="nav-item" onclick="openAccount()">
                                     <a class="nav-link" href="{{ route('pages.login') }}"> login </a>
+                                    <a class="nav-link" href="{{ route('pages.sign-up') }}"> Sign-Up </a>
                                 </li>
                             @endif
 

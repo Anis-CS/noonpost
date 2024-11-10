@@ -18,15 +18,28 @@
                                 @csrf
                                 <div class="form-group">
                                     <input type="text" class="form-control widget__form-input" placeholder="Username*" name="name" value="">
+                                    @error('name')
+                                     <p class=" text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
+
                                 <div class="form-group">
                                     <input type="text" class="form-control widget__form-input" placeholder="Mobile Number*" name="phone" value="">
+                                    @error('phone')
+                                        <p class=" text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <input type="email" class="form-control widget__form-input" placeholder="Email Address*" name="email" value="">
+                                    @error('email')
+                                        <p class=" text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <input type="password" class="form-control widget__form-input" placeholder="Password*" name="password" value="">
+                                    @error('password')
+                                        <p class=" text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                                 <div class="widget__form-controls form-group">
                                     <div class="widget__form-controls-checkbox">

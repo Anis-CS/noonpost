@@ -9,12 +9,27 @@ use Session;
 
 class CustomerController extends Controller
 {
-    private $customer;
+    private $customer,$otp;
 
 
     public function store(Request $request)
     {
-
+        // Request validation
+        $request->validate([
+            "name"=>"required | string",
+            "email"=>"required | email | string | unique:customers",
+            "phone"=>"required | integer | unique:customers",
+            "password"=>"required",
+        ],
+            [
+                "name.required" => "The name field is required.",
+                "email.required" => "We need to know your email address!",
+                "email.email" => "Please provide a valid email address.",
+                "email.unique" => "This email address is already registered.",
+                "phone.required" => "Please provide a phone number.",
+                "phone.unique" => "This Phone Number is already registered.",
+                "password.required" => "A password is required.",
+            ]);
         $this->customer = Customer::newCustomer($request);
 
         Session::put('customer_id',$this->customer->id);
