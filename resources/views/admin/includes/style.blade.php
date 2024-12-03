@@ -17,3 +17,4 @@
 <!-- INTERNAL Switcher css -->
 <link href="{{ asset('/') }}admin/assets/switcher/css/switcher.css" rel="stylesheet">
 <link href="{{ asset('/') }}admin/assets/switcher/demo.css" rel="stylesheet">
+

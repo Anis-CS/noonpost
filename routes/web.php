@@ -12,6 +12,7 @@ use App\Http\Controllers\admin\AuthorController;
 use App\Http\Controllers\admin\CarouselController;
 use App\Http\Controllers\website\CustomerController;
 use App\Http\Controllers\website\ContactController;
+use App\Http\Controllers\admin\AboutController;
 
 //Route::get('/', function () { return view('welcome'); });
 
@@ -59,7 +60,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::resources([
         'categories'    =>  BlogCategoryController::class,
         'blogs'         =>  BlogController::class,
-
+        'abouts'        =>  AboutController::class,
+        'posts'         =>  PostController::class,
     ]);
     Route::get('/blog-status/{id}',[BlogController::class,'status'])->name('blogs.status');
 

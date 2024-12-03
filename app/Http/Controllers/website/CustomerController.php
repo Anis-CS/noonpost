@@ -32,18 +32,18 @@ class CustomerController extends Controller
             ]);
         $this->customer = Customer::newCustomer($request);
 
-        Session::put('customer_id',$this->customer->id);
-        Session::put('customer_name',$this->customer->name);
+        Session::put('customer_id', $this->customer->id);
+        Session::put('customer_name', $this->customer->name);
 
         return redirect('/');
     }
 
     public function customerLoginCheck(Request $request){
-        $this->customer = Customer::where('email',$request->username)
+        $this->customer = Customer::where('email', $request->username)
             ->orWhere('phone',$request->username)
             ->first();
         if ($this->customer){
-            if (password_verify($request->password,$this->customer->password)){
+            if (password_verify($request->password, $this->customer->password)){
 
                 Session::put('customer_id', $this->customer->id);
                 Session::put('customer_name', $this->customer->name);

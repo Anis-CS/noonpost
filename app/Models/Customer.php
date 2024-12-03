@@ -80,7 +80,7 @@ class Customer extends Model
         self::$customer->date_of_birth  = $request->date_of_birth;
         self::$customer->gender         = $request->gender;
         self::$customer->address        = $request->address;
-        self::$customer->image          = self::$imageUrl;
+        self::$customer->image          = self::$customerImgUrl;
         self::$customer->save();
     }
 

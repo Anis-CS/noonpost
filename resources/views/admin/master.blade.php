@@ -56,6 +56,15 @@
 <!-- JQUERY JS -->
 @include('admin.includes.script')
 
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote();
+            $('#summernote1').summernote();
+            $('#summernote2').summernote();
+        });
+    </script>
+
+
 </body>
 </html>
 
