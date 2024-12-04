@@ -13,6 +13,7 @@ use App\Http\Controllers\admin\CarouselController;
 use App\Http\Controllers\website\CustomerController;
 use App\Http\Controllers\website\ContactController;
 use App\Http\Controllers\admin\AboutController;
+use App\Http\Controllers\admin\PostController;
 
 //Route::get('/', function () { return view('welcome'); });
 

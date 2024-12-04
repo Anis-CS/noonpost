@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -20,7 +21,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.post-feature.edit');
     }
 
     /**
@@ -28,7 +29,9 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+//        return $request;
+        Post::saveInfo($request);
+        return back();
     }
 
     /**
@@ -44,7 +47,9 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.post-feature.edit',[
+            'posts' => Post::find($id)
+        ]);
     }
 
     /**

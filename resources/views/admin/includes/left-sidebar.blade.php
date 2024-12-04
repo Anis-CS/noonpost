@@ -83,7 +83,7 @@
                         <span class="side-menu__label">Post Module</span><i class="angle fa fa-angle-right"></i>
                     </a>
                     <ul class="slide-menu">
-                        <li><a href="{{ route('posts.create') }}" class="slide-item">Manage Post</a></li>
+                        <li><a href="{{ route('posts.edit', 1) }}" class="slide-item">Manage Post</a></li>
                     </ul>
                 </li>
 

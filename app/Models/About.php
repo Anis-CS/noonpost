@@ -18,10 +18,10 @@ class About extends Model
             {
                 unlink(self::$abouts->image);
             }
-            $aboutImgUrl    = getImageUrl($request->image, 'admin/upload/about-images/');
+            self::$aboutImgUrl    = getImageUrl($request->image, 'admin/upload/about-images/');
         }
         self::$abouts->id                       = $request->id;
-        self::$abouts->image                    = $aboutImgUrl;
+        self::$abouts->image                    = self::$aboutImgUrl;
         self::$abouts->long_description         = $request->long_description;
         self::$abouts->title                    = $request->title;
         self::$abouts->short_description        = $request->short_description;
